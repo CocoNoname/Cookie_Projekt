@@ -1,40 +1,55 @@
+<?php
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    require_once('C:/xampp/htdocs/Cookie_Projekt/_inc/classes/Page.php');
+    require_once('C:/xampp/htdocs/Cookie_Projekt/_inc/classes/Navigation.php');
+    require_once('../_inc/classes/Galery.php'); 
+
+    $logged_in = isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true;
+
+
+    $pages = array(
+        'Domov' => 'home.php',
+        'Galéria' => 'galery.php',
+        'Otázky/Odpovede' => 'qna.php',
+        'Kontakt' => 'kontakt.php',
+        ($logged_in ? 'Odhlásiť sa' : 'Login') => ($logged_in ? 'logout.php' : 'login.php')
+    );
+
+    $menu_object = new Menu($pages);
+    $menu = $menu_object->generate_menu();
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/slider.css">
-    <link rel="stylesheet" href="css/accordion.css">
-    <link rel="stylesheet" href="css/banner.css">
-    <link rel="stylesheet" href="css/form.css">
-    <link rel="stylesheet" href="css/portfolio.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><?php echo 'Moj web | ' . $current_page_name; ?></title>
+    <?php
+        $page_object->add_styles();
+    ?>
 </head>
 <body>
-    <header class="container main-header">
+    <header>
+        <!-- logo -->
         <div>
-          <a href="index.html">
-            <img src="img/cookie.png" height="55">
-          </a>
+            <a href="home.php">
+                <img src="../img/logo.png" alt="logo" id="logo">
+            </a>
         </div>
-      <nav class="main-nav">
-        <ul class="main-menu" id="main-menu"> 
-        <?php
-            $pages = array('Domov'=>'index.php',
-                          'Portfólio'=>'portfolio.php',
-                          'Q&A'=>'qna.php',
-                          'Kontakt'=>'kontakt.php'  
-                          );
-            foreach($pages as $page_name => $page_url){
-              echo('<li><a href = "'.$page_url.'">'.$page_name.'</a></li>');
-          }
-            
-          ?> 
-        </ul>
-        <a class="hamburger" id="hamburger">
-            <i class="fa fa-bars"></i>
-        </a>
-      </nav>
+        <!-- navigacia -->
+        <nav class="main-nav">
+            <ul class="main-menu" id="main-menu">
+                <?php
+                    echo $menu; 
+                ?>
+            </ul>
+            <span class="hamburger" id="hamburger">
+                <i class="fa fa-bars"></i>
+            </span>
+        </nav>
     </header>
+    <main>
