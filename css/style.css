@@ -129,6 +129,58 @@ table{
   border-collapse: collapse;
 }
 
+.admin-table .edit-btn,
+.admin-table .delete-btn {
+  width: 80px;
+  height: 50px; 
+}
+
+.admin-table .answer-column {
+  width: 650x;
+}
+
+.admin-table th{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: left;
+  background-color: black;
+  color: white;
+}
+.admin-table tr:nth-child(even){background-color: #f2f2f2;}
+.admin-table tr:hover {background-color: #ddd;}
+
+.menu-example-img:hover {
+  filter: brightness(70%);
+}
+
+.expanding-img-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.expanding-img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(223, 105, 3, 0.5);
+  opacity: 0; 
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-weight: bold; 
+}
+
+.expanding-img-container:hover .expanding-img-overlay {
+  opacity: 1.5; 
+}
+
+
 footer{
   background-color: rgb(40, 33, 33);
   padding: 15px;
