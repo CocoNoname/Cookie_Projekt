@@ -1,11 +1,94 @@
-/* banner*/
-section.banner{
-    background-image: url('../img/banner/PicA.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height:50vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+
+.visible-slide{ 
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+  position: relative;
+}
+.slides-all{
+  height: 100%;
+  display: flex;
+}
+.slide{   
+  display: flex;
+  justify-content: center;
+  position: relative;
+  transition: 0.5s ease;
+}
+.slide h1{
+  color: white;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  text-shadow: 2px 2px black;
+}
+.slide img{
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+.prev, .next{
+  cursor: pointer;
+  padding: 20px;
+  position: absolute;
+  bottom: 50%;
+  transform: translate(0, 50%);
+  color: white;
+  transition: 0.5s;
+  font-weight: bold;
+  font-size: 20px;
+}
+.prev:hover, .next:hover{
+  background-color: rgba(255, 150, 45);
+}
+.prev{
+  left: 0%;
+}
+.next{
+  right: 0%;
+}
+.banner{
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: black;
+}
+.banner img{
+  height: 450px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.banner h1{
+  position: absolute;
+  color: white;
+  left: 15%;
+}
+
+@media screen and (max-width:800px){
+  .visible-slide{
+      height: 500px;
   }
+}
+@media screen and (max-width: 600px){
+  .visible-slide{
+      height: 400px;
+  }
+  .banner img{
+      height: 300px;
+  }
+  .prev, .next{
+      padding: 5px;
+      font-size: 14px;
+      font-weight: medium;
+  }
+}
+@media screen and (max-width:500px) {
+  .visible-slide{
+      max-height: 300px;
+  }
+  .banner img{
+      height: 250px;
+  }
+}

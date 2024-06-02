@@ -1,48 +1,37 @@
 <?php
-  include('partials/header.php');
+    include_once('./partials/header.php')
 ?>
+        <!-- banner -->
+        <div class="banner">
+            <img src="../img/cooker1.jpg" alt="banner">
+            <h1>Kontakt</h1>
+        </div>
+        <!-- formular -->
+        <section class="margin-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-50">
+                        <h2>Máte otázky?</h2>
+                        <p>Ak by ste mali nejaké otázy ohľadom sušienok, a jedine sušienok, odpovede môžete nájsť na <b>Otázky/Odpovede</b>, ak by ste odpoveď na Vašu otázku nenašli, v tom prípade Nám môžete napísať aj správu pomocou formulára.</p>
+                    </div>
+                    <div class="col-50 text-right" id="formular">
+                        <h2>Napíšte nám</h2>
+                        <form action="thankyou.php" id="contact" method="POST">
+                         <input type="text" placeholder="Vaše meno" id="meno" name="meno" required> <br>
+                         <input type="email" placeholder="Vaš email" id="email" name="email" required><br>
+                         <textarea placeholder="Vaša sprava" id="sprava" name="sprava" cols="30" rows="10"></textarea><br>
+                         <input type="checkbox" id="suhlas" name="suhlas" required>
+                         <label for="suhlas"><i>Súhlasim so spracovaním osobných údajov.</i></label><br>
+                         <input type="submit" value="Odoslať" class="btn" id="btn-submit">
+                        </form>
 
-  <main>
-    <section class="banner">
-      <div class="container text-white">
-        <h1>Kontakt</h1>
-      </div>
-    </section>
-    <section>
-      <div class="container">
-        <div class="col-100 text-center">
-          <p><strong><em>Elit culpa id mollit irure sit. Ex ut et ea esse culpa officia ea incididunt elit velit veniam qui. Mollit deserunt culpa incididunt laborum commodo in culpa.</em
-          ></strong></p>
-        </div>
-      </div>
-    </section>
-    <section class="container">
-      <div class="row">
-        <div class="col-50"> 
-          <h3>Máte otázky?</h3>
-          <p>Incididunt mollit quis eiusmod tempor voluptate duis eu enim amet excepteur cupidatat magna velit. </p> 
-          <p>Velit id ad laborum velit commodo.</p>
-          <p>Consectetur laborum aliqua nulla anim cupidatat consectetur est veniam cupidatat.</p>
-        </div>
-        <div class="col-50 text-right">
-          <h3>Napíšte nám</h3>
-          <form id="contact" action="thankyou.html">
-            <input type="text" placeholder="Vaše meno" id ="meno"  required><br>
-            <input type="email" placeholder="Váš email" id="email" required><br>
-            <textarea name="" placeholder="Vaša správa" id="sprava"></textarea><br>
-            <input type="checkbox" name="" id="" required>
-            <label for=""> Súhlasím so spracovaním osobných údajov.</label><br>
-            <input type="submit" value="Odoslať">
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+    </main>  
+    <!-- footer -->
 <?php
-  include('partials/footer.php');
+    include_once('./partials/footer.php');
 ?>
-
-  <script src="js/menu.js"></script>
-</body>
-</html>

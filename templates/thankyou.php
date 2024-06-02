@@ -1,28 +1,27 @@
 <?php
-  include('partials/header.php');
+    include_once('./partials/header.php');
+    require_once('C:/xampp/htdocs/Cookie_Projekt/_inc/classes/Contact.php')
 ?>
-
-    <main>
-      <section class="banner">
-        <div class="container text-white">
-          <h1>Ďakujeme</h1>
-        </div>
-      </section>
-      <section class="container">
+        <div class="container">
         <div class="row">
-          <div class="col-100 text-center">
-              <h2>Ďakujeme za vyplnenie formulára</h2>
-          </div>
+                <div class="col-100">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-100">
+                    <h1>Ďakujeme za vyplnenie formulára</h1>
+                    <?php
+                         $contact_object = new Contact();
+                         $contact_object->insert();
+                     ?>
+                    <div class="text-center">
+                        <a href="kontakt.php" class="btn">Späť na Kontakt</a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </section>
-
-
     </main>
-    
+    <!-- footer -->
 <?php
-  include('partials/footer.php');
+    include_once('./partials/footer.php');
 ?>
-
-    <script src="js/menu.js"></script>
-</body>
-</html>

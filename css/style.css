@@ -1,170 +1,259 @@
 *{
-  margin:0px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 body{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-/*ŠTÝLY PRE FONTY*/
-h1{
-  font-size:60px;
-}
-h2{
-  font-size:40px;
-}
-h3{
-  font-size:35px;
-}
-h4,h5,h6{
-  font-size:20px;
-}
-p{
-  font-size:16px;
-}
-h1,h2,h3,h4,h5,h6,p,a,li{
-  margin-bottom: 0.7em;
+  background-color: #f7f8fa;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 main{
-  /*margin-top:60px;*/
+  margin-top: 85px;
+  margin-bottom: 5px;
 }
-/*každý druhý section element 
-bude mať sivé pozadie*/
-main section:nth-child(even){
-  background-color: #f7f7f7;
+section{
+  padding: 20px;
 }
-/*ŠTÝLY PRE HEADER*/
-header{
-  /*position: fixed;  
-  top:0;
-  left:0;
-  right:0;*/
-  height:60px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+main section:nth-of-type(odd){
   background-color: white;
-  z-index: 1; 
-  max-width: 100%; 
 }
-.main-menu li{
-  display:inline;
-  margin-left: 20px;
+h1{
+  font-size: 60px;
 }
-.main-menu li a{
-  text-decoration: none;
-  color:black;
+h2{
+  font-size: 35px;
 }
-.main-menu li:hover a{
- text-decoration: underline;
+h3{
+  font-size: 25px;
 }
-.hamburger{
-  display: none;
+h4,h5,h6{
+  font-size: 20px;
 }
-
-/*ŠTÝLY PRE LAYOUT*/
-.container{
-  padding:3% 10% 3% 10%;
+p{
+  font-size: 16px;
 }
-.row{
-  display:flex;
-  flex-direction: row;
-  padding: 25px 0px;
-  gap:20px;
-}
-/*šírka stĺpcov .col, ktoré sa nachádzajú pod class .row*/
-.row .col-25{
-  width:25%;
-}
-.row .col-33{
-  width:33%;
-}
-.row .col-50{
-  width:50%;
-}
-.row .col-100{
-  width:100%;
-}
-/*FARBY POZADIA*/
-.bg-dark{
-  background-color:rgb(25, 25, 25);
-}
-/*FARBY TEXTOV*/
-.text-dark{
-  color:rgb(25, 25, 25);
-}
-.text-white{
-  color:white;
-}
-
-/*ZAROVNANIE TEXTOV*/
 .text-center{
-  text-align:center;
-}
-.text-left{
-  text-align:left;
+  text-align: center;
 }
 .text-right{
-  text-align:right;
+  text-align: right;
 }
+.text-left{
+  text-align: left;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.row-fluid{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+  margin-top: 10px;
+}
+.row{
+  display: flex;
+  width: 80%;
+  margin-top: 10px;
+  gap: 40px;
+}
+.col-100{
+  width: 100%;
+}
+.col-50{
+  width: 50%;
+}
+.col-33{
+  width: 33%;
+}
+.col-25{
+  width: 25%;
+}
+.margin-top{
+  margin-top: 30px;
+}
+.float-right{
+  float: right;
+}
+.menu-example-img{
+  width: 100%;
+}
+.popis-produkta{
+  padding: 10px 0;
+}
+.btn{
+  display: inline-block;
+  cursor: pointer;
+  max-width: 150px;
+  text-align: center;
+  background-color: rgb(255, 150, 45);
+  border-radius: 18px;
+  padding: 10px 15px;
+  color: white;
+  font-size: 16px;
 
-/*FOOTER*/
 
-footer p a{
+}
+.btn.farba{
+  background-color: white;
+  color: rgb(139, 95, 24);
+}
+.btn.farba:hover{
+  transform: none;
   text-decoration: none;
-  color:white;
+  background-color: rgb(225, 225, 225);
+  color: rgb(125, 71, 8);
 }
-@media screen and (max-width: 600px) {
-  main{
-    margin-top:0px;
-  }
+
+#thank-back-btn{
+  margin-top: 80px;
+  padding: 15px 30px;
+}
+
+.img-for-empty-space{
+  width: 100%;
+}
+table td, table th{
+  border: 2px solid black;
+  text-align: center;
+  height: 50px;
+}
+table{
+  border-collapse: collapse;
+}
+
+footer{
+  background-color: rgb(40, 33, 33);
+  padding: 15px;
+  color: white;
+  margin-top: auto;
+}
+footer ul{
+  list-style: none;
+}
+footer a{
+  color: white;
+  text-decoration: none;
+  margin: 5px;
+}
+footer a:hover{
+  text-decoration: underline;
+}
+
+@media screen and (max-width:1450px) {
   h1{
-    font-size:40px;
+      font-size: 55px;
   }
   h2{
-    font-size:30px;
+      font-size: 30px;
+  }
+  h3{
+      font-size: 23px;
+  }
+  #thank_back_btn{
+      margin-top: 50px;
+  }
+  .expanding-img-overlay p {
+      font-size: 15px;
+  }
+}
+@media screen and (max-width:1000px){
+  h1{
+      font-size: 50px;
+  }
+  h2{
+      font-size: 27px;
+  }
+  h3{
+      font-size: 20px;
+  }
+  h4,h5,h6{
+      font-size: 16px;
   }
   .row{
-    flex-direction: column;
+      gap: 20px;
   }
-  .row .col-25, .row .col-33, .row .col-50{
-    width: 100%;
+  #thank_back_btn{
+      margin-top: 20px;
+      padding: 10px 25px;
   }
-  .main-menu{
-    display: none;
+  .expanding-img-overlay p {
+      font-size: 12px;
   }
-  .hamburger {
-    display: inline;
+}
+@media screen and (max-width:800px){
+  h1{
+      font-size: 40px;
   }
-  .main-header{
-    position:relative;
-    top:0px;
+  h4,h5,h6{
+      font-size: 14px;
   }
-
-  /*ŠTÝLY PRE HEADER*/
-  .main-menu{
-    display: none;
+  p{
+      font-size: 13.5px;
   }
-  .hamburger {
-    display: inline;
+  .row{
+      gap: 10px;
   }
-  .main-header{
-    position:relative;
-    top:0px;
+  .btn{
+      padding: 6px 9px;
+      font-size: 15px;
+      max-width: 120px;
   }
-  .main-menu.responsive {
-    display: block;
-    position: absolute;
-    background-color: #f7f7f7;
-    width:100%;
-    top:60px;
-    left:0px;
-    padding-top:20px;
-    padding-bottom:20px;
+  .expanding-img-overlay p {
+      font-size: 10px;
   }
-  .main-menu.responsive li{
-    display: block;
-    margin-left:0px;
-  }  
-  
 }
 
+@media screen and (max-width:600px){
+  h1{
+      font-size: 30px;
+  }
+  h2{
+      font-size: 25px;
+  }
+  h3{
+      font-size: 18px;
+  }
+  p{
+      font-size: 12.5px;
+  }
+  main{
+      margin-top: 40px;
+  }
+  .row{
+      flex-direction: column;
+  }
+  .col-25, .col-33, .col-50{
+      width: 100%;
+  }
+  .menu-example-img{
+      width: 100%;
+  }
+  footer .col-33{
+      text-align: left;
+  }
+  #thank_back_btn{
+      margin-top: 10px;
+  }
+  .expanding-img-overlay p {
+      font-size: 10px;
+  }
+}
+@media screen and (max-width:500px){
+  h1{
+      font-size: 25px;
+  }
+  h2{
+      font-size: 20px;
+  }
+  p{
+      font-size: 11.5px;
+  }
+}
