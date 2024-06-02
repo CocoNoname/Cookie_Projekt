@@ -1,9 +1,6 @@
-
-var accordion = document.getElementsByClassName('accordion');
-//mám viacero akordeonov, potrebujem nimi prejsť
-for(a of accordion){
-    a.addEventListener("click",function(){
-      //this hovorí doslova tomuto, po ktorom práve klikáš daj class active
-      this.classList.toggle('active');
+const acc = document.getElementsByClassName("accordion");
+for(let i = 0; i < acc.length; i++){
+    acc[i].addEventListener("click", function(){
+        this.classList.toggle("active");
     })
-  }
+}

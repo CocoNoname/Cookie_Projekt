@@ -1,37 +1,30 @@
-//index slideu, nastavíme na 1
-var idx = 1;
-
-function show(n) {
-  // prejdem dlzkou slideov
-  var slides = document.getElementsByClassName("slide");
-  //ak je n vacsie ako dlzka (som na konci, nastavim sa zas na prvy slide)
-  if (n > slides.length){
-    idx = 1;
-  }
-  //ak som za koncom, nastavim sa na posledny    
-  if (n < 1) {
-    idx = slides.length;
-  }
-  // prechadzam slidemi, skryjem ich
-  for (var i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  slides[idx-1].style.display = "block";  
+let index = 0;
+const slides = document.getElementsByClassName("slide");
+const slidesAll = document.querySelector(".slides-all");
+slidesAll.style.width = slides.length*100 + "%";
+const dlzkaSlajdu = 100/slides.length;
+const first_slide = document.querySelector(".first-slide")
+for(let i of slides){
+    i.style.width = dlzkaSlajdu + "%";
 }
-//metoda na dalsi slide, v zavislosti od toho, ci klikame vpravo alebo vlavo (nasledujuci alebo predosly slide) do nej pojde pozitivne alebo negativne cislo
-function nextSlide(n) {
-  show(idx += n);
+function showSlide(index){
+    first_slide.style.marginLeft = -index * dlzkaSlajdu + "%"
 }
-
-//zobrazíme prvý slide
-show(idx);
-
-var prev  = document.getElementById("prev");
-prev.addEventListener("click", function(){
-    nextSlide(-1)
-});
-
-var next  = document.getElementById("next");
-next.addEventListener("click", function(){
-    nextSlide(1)
-});
+function switchSlide(direction){
+    index += direction;
+    if(index < 0){
+        index = slides.length-1;
+    }
+    else if(index > slides.length-1){
+        index = 0;
+    }
+    showSlide(index);
+}
+const prev_button = document.getElementById("prev");
+const next_button = document.getElementById("next");
+prev_button.addEventListener("click", function(){
+    switchSlide(-1)
+})
+next_button.addEventListener("click", function(){
+    switchSlide(1)
+})
